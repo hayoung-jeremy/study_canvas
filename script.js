@@ -10,4 +10,9 @@ image1.src = "SLASH21.png";
 image1.addEventListener("load", function () {
   // (선택한 이미지 요소, x 좌표, y 좌표, 이미지를 넓이를 canvas 넓이에 맞춘다, 이미지 높이를 canvas 높이에 맞춘다.)
   ctx.drawImage(image1, 0, 0, canvas.width, canvas.height);
+  // ( 시작점 x 좌표, 시작점 y 좌표, 종점 x 좌표, 종점 y 좌표) 에 있는 이미지의 픽셀 정보를 가져온다.
+  const scannedImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  console.log(scannedImage);
+  // image 의 픽셀 정보가 r g b a 총 네개씩 저장되어있음
+  const scannedData = scannedImage.data;
 });
